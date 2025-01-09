@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import CSS from "../index.css";
-
 
 const BookingForm = () => {
     const [formData, setFormData] = useState({
@@ -13,14 +11,14 @@ const BookingForm = () => {
         appointmentTime: "",
     });
 
-    const [timeslots, setTimeslots] = useState([
+    const timeslots = [
         "09:00 AM",
         "10:00 AM",
         "11:00 AM",
         "01:00 PM",
         "02:00 PM",
         "03:00 PM",
-    ]);
+    ]; // Changed to a constant as it's not updated
     const [availableTimes, setAvailableTimes] = useState(timeslots);
 
     useEffect(() => {
@@ -34,12 +32,10 @@ const BookingForm = () => {
             setAvailableTimes(
                 timeslots.filter((time) => !bookedTimes.includes(time))
             );
-
         } else {
             setAvailableTimes(timeslots);
         }
-
-    }, [formData.appointmentDate]);
+    }, [formData.appointmentDate, timeslots]); // Added 'timeslots' to dependency array
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -79,43 +75,27 @@ const BookingForm = () => {
     };
 
     return (
-        // NAVIGATION
-        <><div className="navigartion bg-[#4452AC] text-white">
-            {/* Header Section */}
-            <header className="bg-white shadow-sm sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
-                    {/* Logo */}
-
-                    <Link to="/">
-                        <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
-                    </Link>
-
-                    <nav className="space-x-6">
-                        <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
-                            ABOUT
+        <>
+            {/* NAVIGATION */}
+            <div className="navigartion bg-[#4452AC] text-white">
+                <header className="bg-white shadow-sm sticky top-0 z-50">
+                    <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
+                        <Link to="/">
+                            <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
                         </Link>
 
-                        <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
-                            SERVICES
-                        </Link>
+                        <nav className="space-x-6">
+                            <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">ABOUT</Link>
+                            <Link to="/services" className="text-gray-700 hover:text-[#FFAC75]">SERVICES</Link>
+                            <Link to="/gallery" className="text-gray-700 hover:text-[#FFAC75]">GALLERY</Link>
+                            <Link to="/contact" className="text-gray-700 hover:text-[#FFAC75]">CONTACT</Link>
+                            <Link to="/book" className="bg-[#FFAC75] text-gray-800 px-4 py-2 rounded hover:bg-[#FF8E50]">BOOK ONLINE</Link>
+                        </nav>
+                    </div>
+                </header>
+            </div>
 
-                        <Link to="/gallery" className="text-gray-700 hover:text-[#FFAC75]">
-                            GALLERY
-                        </Link>
-
-                        <Link to="/contact" className="text-gray-700 hover:text-[#FFAC75]">
-                            CONTACT
-                        </Link>
-
-                        <Link to="/book" className="bg-[#FFAC75] text-gray-800 px-4 py-2 rounded hover:bg-[#FF8E50]"
-                        >BOOK ONLINE
-                        </Link>
-
-                    </nav>
-                </div>
-            </header>
-        </div>
-
+            {/* BOOKING FORM */}
             <div className="bg-[#4452AC] min-h-screen flex items-center justify-center">
                 <div className="book-appointment bg-white shadow-md rounded-lg p-8 max-w-md w-full">
                     <h3 className="text-2xl font-bold text-center mb-6">Appointment Booking</h3>
@@ -126,9 +106,7 @@ const BookingForm = () => {
                         }}
                     >
                         <div className="mb-4">
-                            <label htmlFor="name" className="block font-semibold mb-1">
-                                Patient's Name:
-                            </label>
+                            <label htmlFor="name" className="block font-semibold mb-1">Patient's Name:</label>
                             <input
                                 type="text"
                                 id="name"
@@ -136,13 +114,12 @@ const BookingForm = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full border rounded-md p-2"
-                                required />
+                                required
+                            />
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="email" className="block font-semibold mb-1">
-                                Email Address:
-                            </label>
+                            <label htmlFor="email" className="block font-semibold mb-1">Email Address:</label>
                             <input
                                 type="email"
                                 id="email"
@@ -150,13 +127,12 @@ const BookingForm = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full border rounded-md p-2"
-                                required />
+                                required
+                            />
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="phone" className="block font-semibold mb-1">
-                                Phone Number:
-                            </label>
+                            <label htmlFor="phone" className="block font-semibold mb-1">Phone Number:</label>
                             <input
                                 type="tel"
                                 id="phone"
@@ -164,14 +140,12 @@ const BookingForm = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 className="w-full border rounded-md p-2"
-                                required />
+                                required
+                            />
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="appointmentType" className="block font-semibold mb-1">
-                                Type of Appointment:
-                            </label>
-
+                            <label htmlFor="appointmentType" className="block font-semibold mb-1">Type of Appointment:</label>
                             <select
                                 id="appointmentType"
                                 name="appointmentType"
@@ -190,10 +164,7 @@ const BookingForm = () => {
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="appointmentDate" className="block font-semibold mb-1">
-                                Date:
-                            </label>
-
+                            <label htmlFor="appointmentDate" className="block font-semibold mb-1">Date:</label>
                             <input
                                 type="date"
                                 id="appointmentDate"
@@ -201,15 +172,12 @@ const BookingForm = () => {
                                 value={formData.appointmentDate}
                                 onChange={handleChange}
                                 className="w-full border rounded-md p-2"
-                                required />
-
+                                required
+                            />
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="appointmentTime" className="block font-semibold mb-1">
-                                Available Timeslots:
-                            </label>
-
+                            <label htmlFor="appointmentTime" className="block font-semibold mb-1">Available Timeslots:</label>
                             <select
                                 id="appointmentTime"
                                 name="appointmentTime"
@@ -220,14 +188,10 @@ const BookingForm = () => {
                             >
                                 {availableTimes.length > 0 ? (
                                     availableTimes.map((time) => (
-                                        <option key={time} value={time}>
-                                            {time}
-                                        </option>
+                                        <option key={time} value={time}>{time}</option>
                                     ))
                                 ) : (
-                                    <option value="" disabled>
-                                        No available times
-                                    </option>
+                                    <option value="" disabled>No available times</option>
                                 )}
                             </select>
                         </div>
@@ -238,19 +202,13 @@ const BookingForm = () => {
                         >
                             Confirm
                         </button>
-
                     </form>
                 </div>
             </div>
 
-            {/* Horizontal Line */}
-            <hr className="border-t-[0.1rem] border-white my-1" />
-
-            {/* Footer Section */}
+            {/* FOOTER */}
             <footer className="bg-[#4452AC] py-2 text-white">
                 <div className="max-w-5xl mt-5 mx-auto grid grid-cols-1 md:grid-cols-3 px-4">
-                    {/* Working Hours */}
-
                     <div>
                         <h3 className="text-3xl mb-4">Working hours</h3>
                         <ul className="text-xl space-y-2">
@@ -259,43 +217,28 @@ const BookingForm = () => {
                             <li>Wed 9:00 am - 5:00 pm</li>
                         </ul>
                     </div>
-
                     <div>
                         <ul className="text-xl mt-12 space-y-2">
                             <li>Thu 9:00 am - 5:00 pm</li>
                             <li>Fri 9:00 am - 5:00 pm</li>
                             <li>Sat 9:00 am - 5:00 pm</li>
-
                         </ul>
                     </div>
-
-                    {/* Contact Details */}
                     <div>
                         <h3 className="text-3xl mb-4">Contact me</h3>
                         <ul className="text-xl space-y-2">
                             <li>
-                                <a
-                                    href="tel:(718) 942-9942"
-                                    className="text-[#FFAC75] hover:underline"
-                                >
-                                    (718) 942-9942
-                                </a>
+                                <a href="tel:(718) 942-9942" className="text-[#FFAC75] hover:underline">(718) 942-9942</a>
                             </li>
                             <li>
-                                <a
-                                    href="mailto:hello@grandstreetdental.com"
-                                    className="text-[#FFAC75] hover:underline"
-                                >
-                                    hello@grandstreetdental.com
-                                </a>
+                                <a href="mailto:hello@grandstreetdental.com" className="text-[#FFAC75] hover:underline">hello@grandstreetdental.com</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div className="text-center mt-6 text-sm">
-                    &copy; CREDITS/CREATORS/NAME
-                </div>
-            </footer></>
+                <div className="text-center mt-6 text-sm">&copy; CREDITS/CREATORS/NAME</div>
+            </footer>
+        </>
     );
 };
 
