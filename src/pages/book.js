@@ -85,40 +85,30 @@ const BookingForm = () => {
             <header className="bg-white shadow-sm sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
                     {/* Logo */}
+
                     <Link to="/">
-                    <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
+                        <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
                     </Link>
 
-                    {/* Navigation Links */}
                     <nav className="space-x-6">
-                        <Link to="/about">
-                            <a className="text-gray-700 hover:text-[#FFAC75]">
-                                ABOUT
-                            </a>
+                        <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
+                            ABOUT
                         </Link>
 
-                        <Link to="/about">
-                            <a className="text-gray-700 hover:text-[#FFAC75]">
-                                SERVICES
-                            </a>
+                        <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
+                            SERVICES
                         </Link>
 
-                        <Link to="/gallery">
-                            <a className="text-gray-700 hover:text-[#FFAC75]">
-                                GALLERY
-                            </a>
+                        <Link to="/gallery" className="text-gray-700 hover:text-[#FFAC75]">
+                            GALLERY
                         </Link>
 
-                        <Link to="/contact">
-                            <a className="text-gray-700 hover:text-[#FFAC75]">
-                                CONTACT
-                            </a>
+                        <Link to="/contact" className="text-gray-700 hover:text-[#FFAC75]">
+                            CONTACT
                         </Link>
 
-                        <Link to="/book">
-                            <a className="bg-[#FFAC75] text-gray-800 px-4 py-2 rounded hover:bg-[#FF8E50]">
-                                BOOK ONLINE
-                            </a>
+                        <Link to="/book" className="bg-[#FFAC75] text-gray-800 px-4 py-2 rounded hover:bg-[#FF8E50]"
+                        >BOOK ONLINE
                         </Link>
 
                     </nav>
