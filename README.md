@@ -1,3 +1,62 @@
+# My tailwind passion project
+
+This is my passion project through which I have learned much about React and by doing so proving my technical skills for my learning outcomes.
+I used React and Tailwind technologies in an effort to learn something new. This experience has taught me much and I am glad I undertook this task the way I did. Additionally, I am grateful for all the help I received while making it.
+
+
+# Create a React Application
+
+To create a new React app, run the following commands: 
+"npx create-react-app my-tailwind-app
+cd my-tailwind-app".
+
+# Make sure Node.js and npm are installed on your device.
+
+Run these commands in your terminal "node -v
+nmp -v" to confirm installation.
+
+
+# Install Tailwind CSS
+
+This command installs Tailwind: "npm install -D tailwindcss postcss autoprefixer".
+
+# Generate Tailwind Configuration Files
+
+This command generates Tailwind configuration: "npx tailwindcss init".
+
+# Configure Tailwind CSS
+Edit the tailwind.config.js file to include paths to ALL files that will use Tailwind classes. Update the content property as follows:
+"/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/*/.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+".
+
+# Add Tailwind Directives to your CSS file
+Open the index.css file in the src folder and add the following Tailwind directives:
+
+ "@tailwind base;
+@tailwind components;
+@tailwind utilities;
+".
+
+# Start the Development Server
+To start your development server, run the command 
+
+"npm start".
+
+# Inspired by: 
+https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
