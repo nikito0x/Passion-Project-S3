@@ -92,7 +92,6 @@ const BookingForm = () => {
                     {/* Navigation Links */}
                     <nav className="space-x-6">
                         <Link to="/about">
-
                             <a className="text-gray-700 hover:text-[#FFAC75]">
                                 ABOUT
                             </a>
