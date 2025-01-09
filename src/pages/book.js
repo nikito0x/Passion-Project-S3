@@ -7,12 +7,13 @@ const BookingForm = () => {
         name: "",
         email: "",
         phone: "",
-        appointmentType: "Cosmetic consultation",
+        appointmentType: "",
         appointmentDate: "",
         appointmentTime: "",
     });
 
     const timeslots = useMemo(() => [
+        "Pick a timeslot",
         "09:00 AM",
         "10:00 AM",
         "11:00 AM",
@@ -70,7 +71,7 @@ const BookingForm = () => {
             name: "",
             email: "",
             phone: "",
-            appointmentType: "Cosmetic consultation",
+            appointmentType: "",
             appointmentDate: "",
             appointmentTime: "",
         });
@@ -156,6 +157,7 @@ const BookingForm = () => {
                                 className="w-full border rounded-md p-2"
                                 required
                             >
+                                <option value="Pick a type of booking">Pick a type of booking</option>
                                 <option value="Cosmetic consultation">Cosmetic consultation</option>
                                 <option value="Orthodontic consultation">Orthodontic consultation</option>
                                 <option value="Broken tooth/Crown/Inlay/Filling">Broken tooth/Crown/Inlay/Filling</option>
