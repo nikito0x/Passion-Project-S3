@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 const BookingForm = () => {
     const [formData, setFormData] = useState({
@@ -11,14 +12,15 @@ const BookingForm = () => {
         appointmentTime: "",
     });
 
-    const timeslots = [
+    const timeslots = useMemo(() => [
         "09:00 AM",
         "10:00 AM",
         "11:00 AM",
         "01:00 PM",
         "02:00 PM",
         "03:00 PM",
-    ]; // Changed to a constant as it's not updated
+    ],[]);; 
+    
     const [availableTimes, setAvailableTimes] = useState(timeslots);
 
     useEffect(() => {
