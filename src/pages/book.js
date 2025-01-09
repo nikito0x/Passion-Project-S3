@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import CSS from "../index.css";
+// import CSS from "../index.css";
 
 
 const BookingForm = () => {
@@ -86,7 +86,7 @@ const BookingForm = () => {
                 <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
                     {/* Logo */}
                     <Link to="/">
-                        <h1 className="logo font-bold text-gray-800">FAIRY CARE</h1>
+                    <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
                     </Link>
 
                     {/* Navigation Links */}

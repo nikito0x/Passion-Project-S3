@@ -16,7 +16,7 @@ const BeforeAfterGallery = () => {
             <header className="bg-white shadow-sm sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
                     <Link to="/">
-            <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
+                        <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
                     </Link>
 
                     <nav className="space-x-6">
