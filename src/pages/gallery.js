@@ -25,7 +25,7 @@ const BeforeAfterGallery = () => {
                         </Link>
 
                         <Link to="/about">
-                            <a href="" className="text-gray-700 hover:text-[#FFAC75]">
+                            <a className="text-gray-700 hover:text-[#FFAC75]">
                                 SERVICES
                             </a>
                         </Link>

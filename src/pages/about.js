@@ -1,5 +1,5 @@
 import React from "react";
-import CSS from "../index.css";
+// import CSS from "../index.css";
 
 import { Link } from "react-router-dom";
 import servicePic from "../pictures/service-pic.jpg";
@@ -16,7 +16,7 @@ const About = () => {
                     <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
                         {/* Logo */}
                         <Link to="/">
-                <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
+                            <h1 className="logo text-3xl font-bold text-gray-800">FAIRY CARE</h1>
                         </Link>
 
                         {/* Navigation Links */}
@@ -29,7 +29,7 @@ const About = () => {
                             </Link>
 
                             <Link to="/about">
-                                <a href="" className="text-gray-700 hover:text-[#FFAC75]">
+                                <a className="text-gray-700 hover:text-[#FFAC75]">
                                     SERVICES
                                 </a>
                             </Link>
@@ -90,67 +90,65 @@ const About = () => {
 
             </div>
 
-            {/* <a href="/services"> */}
-                <div className="bg-[#4452AC] text-white py-1">
-                    <div className="max-w-7xl mx-auto px-4">
+            <div className="bg-[#4452AC] text-white py-1">
+                <div className="max-w-7xl mx-auto px-4">
 
-                        <h2 className="services-title text-center text-5xl font-bold mb-12">Services</h2>
+                    <h2 className="services-title text-center text-5xl font-bold mb-12">Services</h2>
 
-                        {/* Service 1 */}
-                        <div className="bg-white rounded-[1rem] p-10 flex flex-col md:flex-row items-center mb-12">
-                            <div className="service-text ml-5">
-                                <h3 className="text-2xl font-bold text-black mb-4">Root canal treatment</h3>
-                                <p className="text-black w-[30rem]">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo.
-                                </p>
-                            </div>
-
-                            <div className="service-img flex justify-center items-center ml-48 mt-6 md:mt-0 border-[0.4rem] border-[#4452AC] rounded-[2rem]">
-                                <img
-                                    src={servicePic}
-                                    alt="Root canal treatment"
-                                    className="w-[50rem] max-w-md border-[0.8rem] border-white rounded-[2rem]" />
-                            </div>
+                    {/* Service 1 */}
+                    <div className="bg-white rounded-[1rem] p-10 flex flex-col md:flex-row items-center mb-12">
+                        <div className="service-text ml-5">
+                            <h3 className="text-2xl font-bold text-black mb-4">Root canal treatment</h3>
+                            <p className="text-black w-[30rem]">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo.
+                            </p>
                         </div>
 
-                        {/* Service 2 */}
-                        <div className="bg-white rounded-[1rem] p-10 flex flex-col md:flex-row-reverse items-center mb-12">
-                            <div className="service-text1 md:w-1/2 md:pl-6">
-                                <h3 className="text-2xl font-bold text-black mb-4">Pink and White Aesthetics</h3>
-                                <p className="text-black w-[30rem]">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo.
-                                </p>
-                            </div>
-                            <div className="flex justify-center items-center mr-48 mt-6 md:mt-0 border-[0.4rem] border-[#4452AC] rounded-[2rem]">
-                                <img
-                                    src={servicePic}
-                                    alt="Root canal treatment"
-                                    className="w-[50rem] max-w-md border-[0.8rem] border-white rounded-[2rem]" />
-                            </div>
+                        <div className="service-img flex justify-center items-center ml-48 mt-6 md:mt-0 border-[0.4rem] border-[#4452AC] rounded-[2rem]">
+                            <img
+                                src={servicePic}
+                                alt="Root canal treatment"
+                                className="w-[50rem] max-w-md border-[0.8rem] border-white rounded-[2rem]" />
                         </div>
-
-                        {/* Service 3 */}
-                        <div className="bg-white rounded-[1rem] p-10 flex flex-col md:flex-row items-center mb-12">
-                            <div className="service-text md:w-1/2 md:pr-6 ml-10">
-                                <h3 className="text-2xl font-bold text-black mb-4">Composite restorations</h3>
-                                <p className="text-black">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo.
-                                </p>
-                            </div>
-                            <div className="service-img flex justify-center items-center ml-48 mt-6 md:mt-0 border-[0.4rem] border-[#4452AC] rounded-[2rem]">
-                                <img
-                                    src={servicePic}
-                                    alt="Root canal treatment"
-                                    className="w-[50rem] max-w-md border-[0.8rem] border-white rounded-[2rem]" />
-                            </div>
-                        </div>
-
                     </div>
+
+                    {/* Service 2 */}
+                    <div className="bg-white rounded-[1rem] p-10 flex flex-col md:flex-row-reverse items-center mb-12">
+                        <div className="service-text1 md:w-1/2 md:pl-6">
+                            <h3 className="text-2xl font-bold text-black mb-4">Pink and White Aesthetics</h3>
+                            <p className="text-black w-[30rem]">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo.
+                            </p>
+                        </div>
+                        <div className="flex justify-center items-center mr-48 mt-6 md:mt-0 border-[0.4rem] border-[#4452AC] rounded-[2rem]">
+                            <img
+                                src={servicePic}
+                                alt="Root canal treatment"
+                                className="w-[50rem] max-w-md border-[0.8rem] border-white rounded-[2rem]" />
+                        </div>
+                    </div>
+
+                    {/* Service 3 */}
+                    <div className="bg-white rounded-[1rem] p-10 flex flex-col md:flex-row items-center mb-12">
+                        <div className="service-text md:w-1/2 md:pr-6 ml-10">
+                            <h3 className="text-2xl font-bold text-black mb-4">Composite restorations</h3>
+                            <p className="text-black">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo.
+                            </p>
+                        </div>
+                        <div className="service-img flex justify-center items-center ml-48 mt-6 md:mt-0 border-[0.4rem] border-[#4452AC] rounded-[2rem]">
+                            <img
+                                src={servicePic}
+                                alt="Root canal treatment"
+                                className="w-[50rem] max-w-md border-[0.8rem] border-white rounded-[2rem]" />
+                        </div>
+                    </div>
+
                 </div>
-            {/* </a> */}
+            </div>
 
             <div className="bg-white py-16">
                 <div className="max-w-10xl mx-auto flex flex-col md:flex-row items-center ml-[4rem] mr-[5rem]">

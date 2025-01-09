@@ -1,7 +1,5 @@
 import React from "react";
-import CSS from "../index.css";
-// import myCustomFontWoff2 from 'src/fonts/DMSerifText-Regular.woff2';
-// import myCustomFontWoff from 'src/fonts/DMSerifText-Regular.woff';
+// import CSS from "../index.css";
 
 import { Link } from "react-router-dom"; // Import Link from React Router
 
@@ -34,7 +32,7 @@ const Home = () => {
             </Link>
 
             <Link to="/about">
-              <a href="" className="text-gray-700 hover:text-[#FFAC75]">
+              <a className="text-gray-700 hover:text-[#FFAC75]">
                 SERVICES
               </a>
             </Link>
