@@ -47,7 +47,7 @@ const BookingForm = () => {
     const confirmBooking = () => {
         const { name, email, phone, appointmentType, appointmentDate, appointmentTime } = formData;
 
-        if (!name || !email || !phone || !appointmentDate || !appointmentTime) {
+        if (!name || !email || !phone || !appointmentType || !appointmentDate || !appointmentTime) {
             alert("Please fill in all fields.");
             return;
         }
