@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useMemo } from "react";
 
 const BookingForm = () => {
+    // State to manage form data. Each field corresponds to a booking detail.
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -12,6 +13,7 @@ const BookingForm = () => {
         appointmentTime: "",
     });
 
+    // Memoized array of default timeslots to avoid unnecessary re-creation on each render.
     const timeslots = useMemo(() => [
         "Pick a timeslot",
         "09:00 AM",
@@ -20,41 +22,52 @@ const BookingForm = () => {
         "01:00 PM",
         "02:00 PM",
         "03:00 PM",
-    ],[]);; 
-    
+    ], []);
+
+    // State to manage available timeslots dynamically based on selected appointment date.
     const [availableTimes, setAvailableTimes] = useState(timeslots);
 
+    // Effect to update available timeslots whenever the appointment date changes.
     useEffect(() => {
+        // Retrieve existing bookings from local storage (default to an empty array if none exist).
         const savedBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
 
         if (formData.appointmentDate) {
+            // Filter times that are already booked on the selected date.
             const bookedTimes = savedBookings
                 .filter((b) => b.appointmentDate === formData.appointmentDate)
                 .map((b) => b.appointmentTime);
 
+            // Update available times by excluding booked times.
             setAvailableTimes(
                 timeslots.filter((time) => !bookedTimes.includes(time))
             );
         } else {
+            // Reset available times to default timeslots if no date is selected.
             setAvailableTimes(timeslots);
         }
-    }, [formData.appointmentDate, timeslots]); // Added 'timeslots' to dependency array
+    }, [formData.appointmentDate, timeslots]); // Dependencies ensure effect runs only when date or timeslots change.
 
+    // Handle changes in form inputs and update the corresponding field in state.
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+    // Validate and confirm the booking, then save it to local storage.
     const confirmBooking = () => {
         const { name, email, phone, appointmentType, appointmentDate, appointmentTime } = formData;
 
+        // Alert if any field is missing.
         if (!name || !email || !phone || !appointmentType || !appointmentDate || !appointmentTime) {
             alert("Please fill in all fields.");
             return;
         }
 
+        // Retrieve existing bookings from local storage.
         const savedBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
 
+        // Check if the selected timeslot is already booked.
         const isBooked = savedBookings.some(
             (b) => b.appointmentDate === appointmentDate && b.appointmentTime === appointmentTime
         );
@@ -64,9 +77,12 @@ const BookingForm = () => {
             return;
         }
 
+        // Save the booking and notify the user.
         savedBookings.push(formData);
         localStorage.setItem("bookings", JSON.stringify(savedBookings));
         alert("Booking confirmed!");
+
+        // Reset the form after successful booking.
         setFormData({
             name: "",
             email: "",
@@ -76,6 +92,7 @@ const BookingForm = () => {
             appointmentTime: "",
         });
     };
+
 
     return (
         <>
