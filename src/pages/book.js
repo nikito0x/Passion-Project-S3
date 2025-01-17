@@ -105,8 +105,8 @@ const BookingForm = () => {
                         </Link>
 
                         <nav className="space-x-6">
-                            <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">ABOUT</Link>
-                            <Link to="/services" className="text-gray-700 hover:text-[#FFAC75]">SERVICES</Link>
+                            {/* <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">ABOUT</Link> */}
+                            <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">SERVICES</Link>
                             <Link to="/gallery" className="text-gray-700 hover:text-[#FFAC75]">GALLERY</Link>
                             <Link to="/contact" className="text-gray-700 hover:text-[#FFAC75]">CONTACT</Link>
                             <Link to="/book" className="bg-[#FFAC75] text-gray-800 px-4 py-2 rounded hover:bg-[#FF8E50]">BOOK ONLINE</Link>

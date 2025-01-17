@@ -5,28 +5,34 @@ import ContactImage from "../pictures/contact-img.jpg";
 
 
 const Contact = () => {
+  // Initializes state for form data with default values for name, email, and message
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  // Function to handle changes in form input fields
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; // Destructure the name and value from the input event
     setFormData({ ...formData, [name]: value });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission behavior (page reload)
+
+    // Destructure name, email, and message from the formData state
     const { name, email, message } = formData;
 
-    // CHANGE EMAIL LATER
+    // Constructs a mailto link to open the user's default email client with pre-filled details
     const mailtoLink = `mailto:hello@grandstreetdental.com?subject=Message from ${encodeURIComponent(
       name
     )}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(
       email
     )}`;
 
+    // Redirect the browser to the constructed mailto link
     window.location.href = mailtoLink;
   };
 
@@ -42,9 +48,9 @@ const Contact = () => {
           </Link>
 
           <nav className="space-x-6">
-            <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
+            {/* <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
               ABOUT
-            </Link>
+            </Link> */}
 
             <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
               SERVICES

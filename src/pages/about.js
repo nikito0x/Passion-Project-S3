@@ -21,9 +21,9 @@ const About = () => {
                         </Link>
 
                         <nav className="space-x-6">
-                            <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
+                            {/* <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
                                 ABOUT
-                            </Link>
+                            </Link> */}
 
                             <Link to="/about" className="text-gray-700 hover:text-[#FFAC75]">
                                 SERVICES
